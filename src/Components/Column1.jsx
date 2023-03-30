@@ -1,9 +1,4 @@
-export default function Column1({
-  planningList,
-  setPlanningList,
-  setStep,
-  deleteStep,
-}) {
+export default function Column1({ planningList, setStep, deleteStep }) {
   let column1Data = planningList.filter((item) => item.step === 1);
   return (
     <div className="column1">
@@ -11,7 +6,7 @@ export default function Column1({
       {/* <div> */}
       <>
         {column1Data.map((item, idx) => (
-          <div key={item.id} className="step-box">
+          <div key={item.id} className="step-box" draggable>
             <p>{item.content}</p>
             <button onClick={() => setStep(item.id, 2)}>Next Step</button>
             <button onClick={() => deleteStep(item.id)}>X</button>

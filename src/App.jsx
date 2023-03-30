@@ -6,6 +6,7 @@ import Column1 from "./Components/Column1";
 import Column2 from "./Components/Column2";
 import Column3 from "./Components/Column3";
 import HeaderTitle from "./Components/HeaderTitle";
+import Form from "./Components/Form";
 
 function App() {
   const [planningList, setPlanningList] = useState(planningBoardData);
@@ -25,21 +26,19 @@ function App() {
   return (
     <div className="App">
       <HeaderTitle />
+      <Form planningList={planningList} setPlanningList={setPlanningList} />
       <Column1
         planningList={planningList}
-        setPlanningList={setPlanningList}
         setStep={setStep}
         deleteStep={deleteStep}
       />
       <Column2
         planningList={planningList}
-        setPlanningList={setPlanningList}
         setStep={setStep}
         deleteStep={deleteStep}
       />
       <Column3
         planningList={planningList}
-        setPlanningList={setPlanningList}
         setStep={setStep}
         deleteStep={deleteStep}
       />

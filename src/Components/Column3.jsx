@@ -1,9 +1,4 @@
-export default function Column1({
-  planningList,
-  setPlanningList,
-  setStep,
-  deleteStep,
-}) {
+export default function Column1({ planningList, setStep, deleteStep }) {
   let column1Data = planningList.filter((item) => item.step === 3);
   return (
     <div className="column3">
