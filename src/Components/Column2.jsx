@@ -1,21 +1,23 @@
-export default function Column1({ planningList, setPlanningList, setStep }) {
+export default function Column1({
+  planningList,
+  setPlanningList,
+  setStep,
+  deleteStep,
+}) {
   let column1Data = planningList.filter((item) => item.step === 2);
   return (
-    <div >
-      <div className="tuna">
-        <h1>PLACEHOLDER TITLE FOR COLUMN 2</h1>
-        <div>
-          {column1Data.map((item, idx) => (
-            <div key={item.id}>
-              <p>{item.content}</p>
-              <button onClick={() => setStep(item.id, 3)}>
-                Move To Next Step
-              </button>
-              <button onClick={() => setStep(item.id, 1)}>Move Back</button>
-            </div>
-          ))}
-        </div>
-      </div>
+    <div className="column2">
+      <h1>In Progress</h1>
+      <>
+        {column1Data.map((item, idx) => (
+          <div key={item.id} className="step-box">
+            <p>{item.content}</p>
+            <button onClick={() => setStep(item.id, 3)}>Next Step</button>
+            <button onClick={() => setStep(item.id, 1)}>Move Back</button>
+            <button onClick={() => deleteStep(item.id)}>X</button>
+          </div>
+        ))}
+      </>
     </div>
   );
 }

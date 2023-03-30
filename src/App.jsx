@@ -5,6 +5,7 @@ import "./App.css";
 import Column1 from "./Components/Column1";
 import Column2 from "./Components/Column2";
 import Column3 from "./Components/Column3";
+import HeaderTitle from "./Components/HeaderTitle";
 
 function App() {
   const [planningList, setPlanningList] = useState(planningBoardData);
@@ -15,23 +16,33 @@ function App() {
     setPlanningList(updateStep);
   }
 
+  function deleteStep(id) {
+    let deleteStep = [...planningList];
+    deleteStep = deleteStep.filter((item) => item.id !== id);
+    setPlanningList(deleteStep);
+  }
+
   return (
     <div className="App">
+      <HeaderTitle />
       <Column1
         planningList={planningList}
         setPlanningList={setPlanningList}
         setStep={setStep}
+        deleteStep={deleteStep}
       />
-      {/* <Column2
+      <Column2
         planningList={planningList}
         setPlanningList={setPlanningList}
         setStep={setStep}
-      /> */}
-      {/* <Column2
+        deleteStep={deleteStep}
+      />
+      <Column3
         planningList={planningList}
         setPlanningList={setPlanningList}
         setStep={setStep}
-      /> */}
+        deleteStep={deleteStep}
+      />
     </div>
   );
 }
