@@ -16,7 +16,6 @@ export default function Form({ planningList, setPlanningList }) {
       step: 1,
     });
   }
-  console.log(planningList);
 
   function handleChange(evt) {
     const addItem = {
@@ -36,6 +35,7 @@ export default function Form({ planningList, setPlanningList }) {
           value={newTodo.content}
           onChange={handleChange}
           required
+          autoComplete="off"
         />
         <button type="submit">Add To Planning</button>
       </form>

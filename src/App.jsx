@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { planningBoardData } from "../data";
 import "./App.css";
 
@@ -9,7 +9,13 @@ import HeaderTitle from "./Components/HeaderTitle";
 import Form from "./Components/Form";
 
 function App() {
-  const [planningList, setPlanningList] = useState(planningBoardData);
+  const [planningList, setPlanningList] = useState(() => {
+    const incomingData = localStorage.getItem("planningList")
+    return JSON.parse(incomingData)
+  })
+  useEffect(() => {
+    localStorage.setItem("planningList", JSON.stringify(planningList))
+  },[planningList])
 
   function setStep(id, step) {
     let updateStep = [...planningList];
