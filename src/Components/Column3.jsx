@@ -1,5 +1,5 @@
 export default function Column1({ planningList, setStep, deleteStep }) {
-  let column1Data = planningList.filter((item) => item.step === 3);
+  let column1Data = planningList?.filter((item) => item.step === 3);
   return (
     <div className="column3">
       <h1>Completed</h1>
