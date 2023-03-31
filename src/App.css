@@ -61,3 +61,18 @@
   grid-column: 1/4;
   grid-row: 1/2;
 }
+
+button{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+form{
+  display: flex;
+}
+input{
+  height: 25px;
+}
+button>img{
+  height: 30px;
+}

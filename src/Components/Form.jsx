@@ -37,7 +37,7 @@ export default function Form({ planningList, setPlanningList }) {
           required
           autoComplete="off"
         />
-        <button type="submit">Add To Planning</button>
+        <button type="submit"><img src="./add-new.png" alt="" /></button>
       </form>
     </div>
   );

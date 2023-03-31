@@ -7,9 +7,9 @@ export default function Column1({ planningList, setStep, deleteStep }) {
         {column1Data?.map((item, idx) => (
           <div key={item.id} className="step-box">
             <p>{item.content}</p>
-            <button onClick={() => setStep(item.id, 3)}>Next Step</button>
-            <button onClick={() => setStep(item.id, 1)}>Move Back</button>
-            <button onClick={() => deleteStep(item.id)}>X</button>
+            <button onClick={() => setStep(item.id, 1)}>⬅️</button>
+            <button onClick={() => setStep(item.id, 3)}>➡️</button>
+            <button onClick={() => deleteStep(item.id)}>❌</button>
           </div>
         ))}
       </>
