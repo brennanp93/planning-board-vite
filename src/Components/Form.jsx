@@ -7,8 +7,8 @@ export default function Form({ planningList, setPlanningList }) {
     step: 1,
   });
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  function handleSubmit(e) {
+    e.preventDefault();
     setPlanningList([...planningList, newTodo]);
     setNewTodo({
       id: "",

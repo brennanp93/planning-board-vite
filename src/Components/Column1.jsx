@@ -1,6 +1,6 @@
 export default function Column1({ planningList, setStep, deleteStep }) {
   let column1Data = planningList?.filter((item) => item.step === 1);
-  console.log(column1Data);
+
   return (
     <div className="column1">
       <h1>Planning Stage</h1>
